@@ -1,0 +1,1 @@
+("/home/lbowen/p4/amici/dev/sanitize_string_data/" "/scpc:alyssa:/home/lbowen/p4/amici/dev/sanitize_string_data/" "/scpc:alyssa:/home/lbowen/.oh-my-zsh/" "/home/lbowen/rusty-shank/")

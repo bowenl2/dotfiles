@@ -1,0 +1,3 @@
+phpunit --stop-on-failure --verbose --syntax-check .
+quit
+exit
