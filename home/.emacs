@@ -141,8 +141,7 @@
             (lambda ()
               (require 'php-align)
               (php-align-setup)
-              (setq fill-column 78))
-)
+              (setq fill-column 78))))
 
 ;; alyssa
 (when (string= system-name "alyssa.amicillc.com")
