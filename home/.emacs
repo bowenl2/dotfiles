@@ -89,7 +89,8 @@
 
 ;; fic
 (require 'fic-mode)
-(add-hook 'php-mode-hook 'turn-on-fic-mode)
+(add-hook 'c-mode-common-hook 'turn-on-fic-mode)
+(add-hook 'text-mode-hook 'turn-on-fic-mode)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-^") 'mc/edit-lines)
