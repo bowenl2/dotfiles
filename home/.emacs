@@ -57,6 +57,7 @@
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
 
 ;; parentheses
 ;; (setq-default show-paren-mode t) ; this highlights the current pair
