@@ -3,15 +3,16 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	c-electric-paren
-	c-electric-semi&comma
-	delete-horizontal-space
-	indent-region
-	kill-region
-	))
+        c-electric-paren
+        c-electric-semi&comma
+        delete-horizontal-space
+        indent-for-tab-command
+        indent-region
+        kill-region
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	next-buffer
-	sh-assignment
-	))
+        next-buffer
+        sh-assignment
+        ))
