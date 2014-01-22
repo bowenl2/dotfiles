@@ -18,11 +18,17 @@ plugins=(rails ruby git rvm)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/games:$HOME/.rvm/bin"
+alias wtf="git status"
+alias st="ssh testing"
+alias sa="ssh alyssa"
+
+export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
 export EDITOR="emacsclient -t"
 export ALTERNATE_EDITOR=""
+export PATH="$GOPATH/bin:/opt/google/chrome/:$PATH:/usr/local/bin:/usr/bin:/bin:/usr/games:$HOME/.rvm/bin"
+
+[[ ! -d "$GOPATH" ]] && mkdir $GOPATH
 
 # If we're not running in tmux, then set the terminal so that tmux can figure out we need color
 # this is totally gnome-terminal's fault and I hate it for that.

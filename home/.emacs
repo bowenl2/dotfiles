@@ -32,6 +32,9 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 
+;; Stop killing emacs by accident
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 ;; windmove
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
@@ -49,13 +52,21 @@
           '(lambda ()
              (local-set-key (kbd "RET") 'newline-and-indent)))
 
-;; ruby-mode includes these shits:
+;; Modes and stuff
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("README\\.md" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(p\\(?:k[bg]\\|ls\\)\\|sql\\)\\'" . plsql-mode))
+
+;; plsql
+(add-to-list 'load-path "~/.emacs.d/plsql/")
+(require 'plsql)
+
 
 ;; parentheses
 ;; (setq-default show-paren-mode t) ; this highlights the current pair
@@ -72,7 +83,6 @@
 
 ;; web-mode
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; uniquify
 (require 'uniquify)
