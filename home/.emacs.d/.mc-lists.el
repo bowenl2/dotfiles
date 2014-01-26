@@ -5,18 +5,16 @@
       '(
         c-electric-paren
         c-electric-semi&comma
-<<<<<<< HEAD
         c-electric-slash
         delete-horizontal-space
-        indent-region
-        kill-region
-        markdown-cycle
-=======
         delete-horizontal-space
+        end-of-visual-line
         indent-for-tab-command
         indent-region
+        indent-region
         kill-region
->>>>>>> 9bc3e14a5b9e92eb42dd61eef160db000b8fb8ac
+        kill-region
+        markdown-cycle
         ))
 
 (setq mc/cmds-to-run-once
