@@ -7,11 +7,14 @@
         c-electric-semi&comma
         c-electric-slash
         delete-horizontal-space
+        delete-horizontal-space
+        end-of-visual-line
+        indent-for-tab-command
+        indent-region
         indent-region
         kill-region
+        kill-region
         markdown-cycle
-        org-metaleft
-        org-self-insert-command
         ))
 
 (setq mc/cmds-to-run-once

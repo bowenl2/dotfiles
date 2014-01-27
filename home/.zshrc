@@ -22,6 +22,11 @@ alias wtf="git status"
 alias st="ssh testing"
 alias sa="ssh alyssa"
 
+gen_commit() {
+    curl whatthecommit.com 2>/dev/null | \
+        xmlstarlet sel -T -t -m '//div/p[1]' -v '.'
+}
+
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
 export EDITOR="emacsclient -t"
