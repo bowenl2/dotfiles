@@ -7,12 +7,17 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+;; keybindings
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+(global-set-key (kbd "C-x \\") 'align-regexp)
+(global-set-key (kbd "C-x g") 'magit-status)
+(define-key text-mode-map (kbd "TAB") 'self-insert-command);
+
 ;; whitespace and formatting
 (setq-default show-trailing-whitespace t)
 (set-default 'truncate-lines t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default indent-tabs-mode nil)
-(define-key text-mode-map (kbd "TAB") 'self-insert-command);
 
 ;; automatically load buffers that change on disk
 (global-auto-revert-mode t)
@@ -112,6 +117,8 @@
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (put 'dired-find-alternate-file 'disabled nil)
 
+(scroll-bar-mode 0)
+
 ;; custom
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -147,10 +154,15 @@
             (lambda ()
               (require 'php-align)
               (php-align-setup)
-              (setq fill-column 78))))
+              (setq fill-column 78)
+              (c-set-offset 'case-label '+) ; indent cases inside switch
+              )))
+
+;; lbowen-dev
+(when (string= system-name "lbowen-dev")
+  (xls-common))
 
 ;; alyssa
 (when (string= system-name "alyssa.amicillc.com")
   (xls-common)
-  (ssh-xterm-tmux)
-  (load-library "p4"))
+  (ssh-xterm-tmux))
