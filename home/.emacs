@@ -117,8 +117,6 @@
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (put 'dired-find-alternate-file 'disabled nil)
 
-(scroll-bar-mode 0)
-
 ;; custom
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
