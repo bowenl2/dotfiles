@@ -26,16 +26,14 @@ alias wtf="git status"
 alias st="ssh testing"
 alias sa="ssh alyssa"
 
-gen_commit() {
-    curl whatthecommit.com 2>/dev/null | \
-        xmlstarlet sel -T -t -m '//div/p[1]' -v '.'
-}
+commit_msg() { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '//div/p[1]' -v '.' }
+excuse() { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
 
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
 export EDITOR="emacsclient -t"
 export ALTERNATE_EDITOR=""
-export PATH="$GOPATH/bin:/opt/google/chrome/:$PATH:/usr/local/bin:/usr/bin:/bin:/usr/games:$HOME/.rvm/bin"
+export PATH="$HOME/.local/bin/:$GOPATH/bin:/opt/google/chrome/:$PATH:/usr/local/bin:/usr/bin:/bin:/usr/games:$HOME/.rvm/bin"
 
 [[ ! -d "$GOPATH" ]] && mkdir $GOPATH
 

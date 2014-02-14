@@ -118,8 +118,6 @@
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 (put 'dired-find-alternate-file 'disabled nil)
 
-(scroll-bar-mode 0)
-
 ;; custom
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -145,6 +143,12 @@
   (global-set-key (kbd "M-[ c") 'enlarge-window-horizontally)
   (global-set-key (kbd "M-[ a") 'shrink-window)
   (global-set-key (kbd "M-[ b") 'enlarge-window))
+
+;; org-mobile
+(setq org-directory "~/Dropbox/org/")
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg/")
+(setq org-mobile-files "tasks.org")
 
 ;; ,----
 ;; | XLS
