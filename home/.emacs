@@ -145,6 +145,12 @@
   (global-set-key (kbd "M-[ a") 'shrink-window)
   (global-set-key (kbd "M-[ b") 'enlarge-window))
 
+;; org-mobile
+(setq org-directory "~/Dropbox/org/")
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg/")
+(setq org-mobile-files "tasks.org")
+
 ;; ,----
 ;; | XLS
 ;; `----
