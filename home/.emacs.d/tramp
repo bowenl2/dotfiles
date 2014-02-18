@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <14/02/16 03:51:09 /home/liam/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <14/02/18 14:03:05 /home/lbowen/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -124,6 +124,24 @@
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl"))
+ (["sshx" nil "lacecard.com" nil nil]
+  ("uname" "Linux 3.11.0-12-generic")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("busybox" nil)
+  ("~" "/home/liam")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("stat" "\\stat")
+  ("file-exists" "test -e")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 1000)
+  ("readlink" "\\readlink")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl"))
  (["sshx" nil "lacecard" nil nil]
   ("uname" "Linux 3.11.0-12-generic")
   ("test" "test")
@@ -142,16 +160,4 @@
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
-  ("uid-integer" 1000))
- (["sshx" nil "lacecard.com" nil nil]
-  ("uname" "Linux 3.11.0-12-generic")
-  ("test" "test")
-  ("remote-path"
-   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
-  ("remote-shell" "/bin/sh")
-  ("busybox" nil)
-  ("stat" "\\stat")
-  ("file-exists" "test -e")
-  ("id" "/usr/bin/id")
-  ("gid-integer" 1000)
-  ("readlink" "\\readlink")))
+  ("uid-integer" 1000)))
