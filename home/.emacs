@@ -68,6 +68,8 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(p\\(?:k[bg]\\|ls\\)\\|sql\\)\\'" . plsql-mode))
 
 ;; parentheses
 ;; (setq-default show-paren-mode t) ; this highlights the current pair
@@ -127,6 +129,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(php-mode-force-pear t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

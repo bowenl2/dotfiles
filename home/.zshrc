@@ -28,6 +28,7 @@ alias sa="ssh alyssa"
 
 commit_msg() { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '//div/p[1]' -v '.' }
 excuse() { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
+gen_file_list() { find . -type f | sort | xargs sha1sum | tee file-list.txt }
 
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
