@@ -18,7 +18,7 @@ setopt PUSHD_TO_HOME
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby git rvm)
+plugins=(rails ruby git rvm virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -26,9 +26,10 @@ alias wtf="git status"
 alias st="ssh testing"
 alias sa="ssh alyssa"
 
-commit_msg() { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '//div/p[1]' -v '.' }
-excuse() { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
+commit_msg()    { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '//div/p[1]' -v '.' }
+excuse()        { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
 gen_file_list() { find . -type f | sort | xargs sha1sum | tee file-list.txt }
+jira()          { google-chrome "https://jira.amicillc.com/browse/$1" }
 
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
