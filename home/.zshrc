@@ -30,6 +30,8 @@ commit_msg()    { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '
 excuse()        { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
 gen_file_list() { find . -type f | sort | xargs sha1sum | tee file-list.txt }
 jira()          { google-chrome "https://jira.amicillc.com/browse/$1" }
+# Enumerate processes in Disk Sleep ('D' in top)
+ps_ds()         { top -b -n 1 | awk '{if (NR <=7) print; else if ($8 == "D") {print; count++} } END {print "Total status D: "count}' }
 
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
