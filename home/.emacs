@@ -13,6 +13,11 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (define-key text-mode-map (kbd "TAB") 'self-insert-command);
 
+(setq url-proxy-services
+   '(("no_proxy" . "^\\(localhost\\|10.*\\|.*\\.amicillc\\.com\\)")
+     ("http" . "proxy.com:8080")
+     ("https" . "proxy.com:8080")))
+
 ;; whitespace and formatting
 (setq-default show-trailing-whitespace t)
 (set-default 'truncate-lines t)
@@ -126,6 +131,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(confluence-url "https://confluence.amicillc.com/rpc/xmlrpc")
+ '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(custom-safe-themes (quote ("d9639ebed5f3709f47b53e4bb8eea98a11455ab9336039cf06e9695a0233d5fb" default)))
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(php-mode-force-pear t))
