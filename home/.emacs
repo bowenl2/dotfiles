@@ -7,6 +7,7 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+
 ;; keybindings
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
@@ -61,8 +62,11 @@
 (add-hook 'ruby-mode-hook
           '(lambda ()
              (local-set-key (kbd "RET") 'newline-and-indent)))
+;; plsql
+(add-to-list 'load-path "~/.emacs.d/plsql")
+(require 'plsql)
 
-;; Modes and stuff
+;; Mode from filename
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
@@ -73,8 +77,7 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.\\(p\\(?:k[bg]\\|ls\\)\\|sql\\)\\'" . plsql-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(p\\(?:k[bg]\\|ls\\)\\|sql\\)\\'" . plsql))
 
 ;; parentheses
 ;; (setq-default show-paren-mode t) ; this highlights the current pair
