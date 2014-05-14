@@ -1,6 +1,19 @@
 ;; Liam Bowen
 ;; .emacs
 
+(defmacro after (mode &rest body)
+  "`eval-after-load' MODE evaluate BODY.
+
+This allows us to define configuration for features that aren't
+always installed and only eval that configuration after the feature is loaded.
+
+ELPA packages usually provide an -autoloads feature which we can
+use to determine if the package is installed/loaded."
+  (declare (indent defun))
+  `(eval-after-load ,mode
+     '(progn ,@body)))
+
+
 ;; packages
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -62,8 +75,18 @@
 (add-hook 'ruby-mode-hook
           '(lambda ()
              (local-set-key (kbd "RET") 'newline-and-indent)))
+;; sql
+(autoload 'sql-mode
+  "sql" "Major mode for SQL files." t)
+(add-to-list 'auto-mode-alist '("\\.sql\\'" . sql-mode))
+;(add-to-list 'load-path (concat shared-lisp-dir "/sql") t)
+
 ;; plsql
 (add-to-list 'load-path "~/.emacs.d/plsql")
+(after 'plsql
+  (setq plsql-indent 4)
+  (add-to-list 'auto-mode-alist '("\\.pk[bs]" . plsql-mode)))
+(autoload 'plsql "plsql")
 (require 'plsql)
 
 ;; Mode from filename
@@ -77,7 +100,6 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.\\(p\\(?:k[bg]\\|ls\\)\\|sql\\)\\'" . plsql))
 
 ;; parentheses
 ;; (setq-default show-paren-mode t) ; this highlights the current pair
@@ -138,8 +160,7 @@
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-safe-themes (quote ("d9639ebed5f3709f47b53e4bb8eea98a11455ab9336039cf06e9695a0233d5fb" default)))
  '(inhibit-startup-screen t)
- '(initial-scratch-message nil)
- '(php-mode-force-pear t))
+ '(initial-scratch-message nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -167,21 +188,21 @@
 ;; ,----
 ;; | XLS
 ;; `----
-(defun xls-common ()
-  (require 'php-mode)
-  (add-hook 'php-mode-hook
-            (lambda ()
-              (require 'php-align)
-              (php-align-setup)
-              (setq fill-column 78)
-              (c-set-offset 'case-label '+) ; indent cases inside switch
-              )))
 
-;; lbowen-dev
-(when (string= system-name "lbowen-dev")
-  (xls-common))
+(after 'php-mode-autoloads
+  (c-add-style "php-pear-k&r-mods" '("k&r"
+                                     (c-basic-offset . 4)
+                                     (c-offsets-alist . ((case-label . +)
+                                                         (arglist-close . 0)
+                                                         (inline-open . 0)))
+                                     (c-hanging-braces-alist . ((defun-open after)
+                                                                (inline-open after)
+                                                                (substatement-open after)))))
+  (add-hook 'php-mode-hook '(lambda ()
+                              (message "Setting style to php-pear")
+                              (c-set-style "php-pear-k&r-mods"))))
+(require 'php-mode)
 
 ;; alyssa
 (when (string= system-name "alyssa.amicillc.com")
-  (xls-common)
   (ssh-xterm-tmux))
