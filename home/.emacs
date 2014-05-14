@@ -32,6 +32,13 @@ use to determine if the package is installed/loaded."
      ("http" . "proxy.com:8080")
      ("https" . "proxy.com:8080")))
 
+(require 'auto-complete)
+(global-auto-complete-mode t)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+
+;;(add-to-list 'ac-modes 'go-mode)
+
 ;; whitespace and formatting
 (setq-default show-trailing-whitespace t)
 (set-default 'truncate-lines t)
