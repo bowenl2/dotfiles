@@ -13,11 +13,6 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (define-key text-mode-map (kbd "TAB") 'self-insert-command);
 
-(setq url-proxy-services
-   '(("no_proxy" . "^\\(localhost\\|10.*\\|.*\\.amicillc\\.com\\)")
-     ("http" . "proxy.com:8080")
-     ("https" . "proxy.com:8080")))
-
 ;; whitespace and formatting
 (setq-default show-trailing-whitespace t)
 (set-default 'truncate-lines t)
@@ -160,6 +155,10 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg/")
 (setq org-mobile-files "tasks.org")
+
+(require 'auto-complete)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
 
 ;; ,----
 ;; | XLS
