@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Environment variables
-ZSH_THEME="seeker"
+ZSH_THEME="candy"
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # CASE_SENSITIVE="true"
@@ -19,7 +19,7 @@ unsetopt PROMPT_SP # fix for Cygwin+ConEMU mostly
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby git rvm virtualenv)
+plugins=(rails ruby git rvm virtualenv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
