@@ -84,14 +84,6 @@ use to determine if the package is installed/loaded."
 (add-to-list 'auto-mode-alist '("\\.sql\\'" . sql-mode))
 ;(add-to-list 'load-path (concat shared-lisp-dir "/sql") t)
 
-;; plsql
-(add-to-list 'load-path "~/.emacs.d/plsql")
-(after 'plsql
-  (setq plsql-indent 4)
-  (add-to-list 'auto-mode-alist '("\\.pk[bs]" . plsql-mode)))
-(autoload 'plsql "plsql")
-(require 'plsql)
-
 ;; Mode from filename
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
@@ -159,7 +151,6 @@ use to determine if the package is installed/loaded."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(confluence-url "https://confluence.amicillc.com/rpc/xmlrpc")
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-safe-themes (quote ("d9639ebed5f3709f47b53e4bb8eea98a11455ab9336039cf06e9695a0233d5fb" default)))
  '(inhibit-startup-screen t)
