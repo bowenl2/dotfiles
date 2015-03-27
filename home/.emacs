@@ -143,7 +143,7 @@ use to determine if the package is installed/loaded."
 
 ;; fiplr!
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
-(setq fiplr-root-markers '(".git" ".svn" "app_builder"))
+(setq fiplr-root-markers '(".git" ".svn"))
 
 ;; figlet
 (require 'figlet)
@@ -182,34 +182,6 @@ use to determine if the package is installed/loaded."
   (global-set-key (kbd "M-[ a") 'shrink-window)
   (global-set-key (kbd "M-[ b") 'enlarge-window))
 
-;; org-mobile
-(setq org-directory "~/Dropbox/org/")
-(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
-(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg/")
-(setq org-mobile-files "tasks.org")
-
 (require 'auto-complete)
 (require 'go-autocomplete)
 (require 'auto-complete-config)
-
-;; ,----
-;; | XLS
-;; `----
-
-(after 'php-mode-autoloads
-  (c-add-style "php-pear-k&r-mods" '("k&r"
-                                     (c-basic-offset . 4)
-                                     (c-offsets-alist . ((case-label . +)
-                                                         (arglist-close . 0)
-                                                         (inline-open . 0)))
-                                     (c-hanging-braces-alist . ((defun-open after)
-                                                                (inline-open after)
-                                                                (substatement-open after)))))
-  (add-hook 'php-mode-hook '(lambda ()
-                              (message "Setting style to php-pear")
-                              (c-set-style "php-pear-k&r-mods"))))
-(require 'php-mode)
-
-;; alyssa
-(when (string= system-name "alyssa.amicillc.com")
-  (ssh-xterm-tmux))
