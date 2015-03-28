@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Environment variables
-ZSH_THEME="candy"
+ZSH_THEME="gnzh" #"robbyrussell"
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # CASE_SENSITIVE="true"
@@ -14,7 +14,6 @@ COMPLETION_WAITING_DOTS="true"
 setopt AUTO_PUSHD # cd does pushd
 setopt PUSHD_SILENT
 setopt PUSHD_TO_HOME
-unsetopt PROMPT_SP # fix for Cygwin+ConEMU mostly
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -30,7 +29,6 @@ alias sa="ssh alyssa"
 commit_msg()    { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '//div/p[1]' -v '.' }
 excuse()        { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
 gen_file_list() { find . -type f | sort | xargs sha1sum | tee file-list.txt }
-jira()          { google-chrome "https://jira.amicillc.com/browse/$1" }
 # Enumerate processes in Disk Sleep ('D' in top)
 ps_ds()         { top -b -n 1 | awk '{if (NR <=7) print; else if ($8 == "D") {print; count++} } END {print "Total status D: "count}' }
 
