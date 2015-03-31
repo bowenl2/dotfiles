@@ -18,13 +18,11 @@ setopt PUSHD_TO_HOME
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails ruby git rvm virtualenv zsh-syntax-highlighting)
+plugins=(rails ruby git rvm virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
 alias wtf="git status"
-alias st="ssh testing"
-alias sa="ssh alyssa"
 
 commit_msg()    { curl whatthecommit.com 2>/dev/null | xmlstarlet sel -T -t -m '//div/p[1]' -v '.' }
 excuse()        { curl programmerexcuses.com 2>/dev/null | grep -m 1 center | sed 's/<[^>]\+>//g;' }
