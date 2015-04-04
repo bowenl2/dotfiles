@@ -45,7 +45,7 @@ export PATH="$HOME/.local/bin/:/usr/local/go/bin/:$GOPATH/bin:/opt/google/chrome
 
 # If we're not running in tmux, then set the terminal so that tmux can figure out we need color
 # this is totally gnome-terminal's fault and I hate it for that.
-if [ "$TERM" != "screen-256color" ]; then
+if [ "$TERM" != "screen-256color" && "$TERM" != "fbterm" ]; then
     export TERM="xterm-256color"
 fi
 
