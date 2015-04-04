@@ -31,6 +31,10 @@ gen_file_list() { find . -type f | sort | xargs sha1sum | tee file-list.txt }
 # Enumerate processes in Disk Sleep ('D' in top)
 ps_ds()         { top -b -n 1 | awk '{if (NR <=7) print; else if ($8 == "D") {print; count++} } END {print "Total status D: "count}' }
 
+export IRCNICK="hut8"
+export IRCNAME="Liam"
+export IRCUSER="hut8"
+export IRCSERVER="card.freenode.net"
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
 export EDITOR="emacsclient -t"
