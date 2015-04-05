@@ -2,7 +2,8 @@ ZSH=$HOME/.oh-my-zsh
 
 # Environment variables
 # DON'T USE gnzh because it breaks on the Linux console
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="bira"
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # CASE_SENSITIVE="true"
