@@ -35,6 +35,7 @@ export IRCNICK="hut8"
 export IRCNAME="Liam"
 export IRCUSER="hut8"
 export IRCSERVER="card.freenode.net"
+
 export GOPATH="$HOME/go"
 export CSHEDIT="emacsclient -t"
 export EDITOR="emacsclient -t"
@@ -45,7 +46,7 @@ export PATH="$HOME/.local/bin/:/usr/local/go/bin/:$GOPATH/bin:/opt/google/chrome
 
 # If we're not running in tmux, then set the terminal so that tmux can figure out we need color
 # this is totally gnome-terminal's fault and I hate it for that.
-if [ "$TERM" != "screen-256color" && "$TERM" != "fbterm" ]; then
+if [ "$TERM" != "screen-256color" ] && [ "$TERM" != "fbterm" ] && [ "$TERM" != "linux" ]; then
     export TERM="xterm-256color"
 fi
 
