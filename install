@@ -1,7 +1,6 @@
 #!/bin/bash
 base_dir="$(readlink -f $(dirname $0))/home"
 echo "Installing from $base_dir"
-ln -nsf "$base_dir/.zshrc" "$HOME/.zshrc"
 ln -nsf "$base_dir/.emacs" "$HOME/.emacs"
 ln -nsf "$base_dir/.emacs.d" "$HOME/.emacs.d"
 ln -nsf "$base_dir/.tmux.conf" "$HOME/.tmux.conf"
