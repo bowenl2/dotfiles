@@ -78,14 +78,10 @@ use to determine if the package is installed/loaded."
 (add-hook 'ruby-mode-hook
           '(lambda ()
              (local-set-key (kbd "RET") 'newline-and-indent)))
-;; sql
-(autoload 'sql-mode
-  "sql" "Major mode for SQL files." t)
-(add-to-list 'auto-mode-alist '("\\.sql\\'" . sql-mode))
-;(add-to-list 'load-path (concat shared-lisp-dir "/sql") t)
 
 ;; Mode from filename
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
