@@ -1,3 +1,23 @@
 phpunit --stop-on-failure --verbose --syntax-check .
 quit
 exit
+cd github-contributor/
+ls
+./archive-processor PushEvent|jq .
+ls
+./archive-processor PushEvent
+./archive-processor PushEvent | jq .
+./archive-processor PushEvent | cat -
+./archive-processor PushEvent | jq -v 
+jq --help
+./archive-processor PushEvent | tee | jq .
+./archive-processor PushEvent | jq .
+cd
+ls
+cd github-archive-processed/
+l
+ls
+zcat 
+zcat 2015-01-01-1.json-processed.json.gz | head -n 1
+zcat 2015-01-01-11.json-processed.json.gz | head -n 1
+exit
