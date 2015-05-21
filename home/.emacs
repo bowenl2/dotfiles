@@ -150,7 +150,11 @@ use to determine if the package is installed/loaded."
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(custom-safe-themes (quote ("d9639ebed5f3709f47b53e4bb8eea98a11455ab9336039cf06e9695a0233d5fb" default)))
  '(inhibit-startup-screen t)
- '(initial-scratch-message nil))
+ '(initial-scratch-message nil)
+ '(web-mode-enable-auto-closing t)
+ '(web-mode-enable-comment-keywords "TODO")
+ '(web-mode-enable-engine-detection t)
+ '(web-mode-markup-indent-offset 2))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
