@@ -173,6 +173,15 @@ use to determine if the package is installed/loaded."
 (require 'go-autocomplete)
 (require 'auto-complete-config)
 
+;; org
+(require 'org)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(setq org-log-done t)
+(setq org-agenda-files (list "~/org/projects.org"
+                             "~/org/personal.org"))
+
 (load "term/xterm")
 
 (defun terminal-init-fbterm ()
