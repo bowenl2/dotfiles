@@ -183,20 +183,8 @@ use to determine if the package is installed/loaded."
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-log-done t)
-(setq org-agenda-files (list "~/org/projects.org"
-                             "~/org/personal.org"))
+(setq org-html-doctype "html5")
+(setq org-agenda-files (list "~/org/"))
 
 (load "term/xterm")
-
-(defun terminal-init-fbterm ()
-  "Terminal initialization function for linux fbterm."
-  (unless (terminal-coding-system)
-    (set-terminal-coding-system 'utf-8-unix))
-
-  ;; It can't really display underlines.
-  (tty-no-underline)
-
-  (ignore-errors (when gpm-mouse-mode (require 't-mouse) (gpm-mouse-enable)))
-
-  (xterm-register-default-colors))
-(terminal-init-fbterm)
+;  (xterm-register-default-colors)
