@@ -184,7 +184,7 @@ use to determine if the package is installed/loaded."
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-log-done t)
 (setq org-html-doctype "html5")
-(setq org-agenda-files (list "~/org/"))
+(setq org-agenda-files (list "~/Dropbox/org/"))
 
 (load "term/xterm")
 ;  (xterm-register-default-colors)
