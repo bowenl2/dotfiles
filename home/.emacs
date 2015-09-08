@@ -101,9 +101,11 @@ use to determine if the package is installed/loaded."
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
 
-;; ido-mode
-(require 'ido)
-(ido-mode t)
+;; flx-ido
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
 
 ;; web-mode
 (require 'web-mode)
@@ -188,3 +190,5 @@ use to determine if the package is installed/loaded."
 
 (load "term/xterm")
 ;  (xterm-register-default-colors)
+
+(projectile-global-mode)
