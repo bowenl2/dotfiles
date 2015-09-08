@@ -106,6 +106,8 @@ use to determine if the package is installed/loaded."
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
+(ido-vertical-mode 1)
+(setq ido-vertical-show-count t)
 
 ;; web-mode
 (require 'web-mode)
