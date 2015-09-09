@@ -108,6 +108,7 @@ use to determine if the package is installed/loaded."
 (flx-ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-show-count t)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 ;; web-mode
 (require 'web-mode)
