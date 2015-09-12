@@ -1,0 +1,27 @@
+2012-10-30  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	Clean up copyright notices.
+
+2011-07-01  Chong Yidong  <cyd@stupidchicken.com>
+
+	Remove version numbers from filenames in packages/ dir.
+
+2011-06-30  Chong Yidong  <cyd@stupidchicken.com>
+
+	Remove version numbers in packages/ directory
+
+2011-05-31  Ted Zlatanov  <tzz@lifelogs.com>
+
+	Add uni-confusables.el 0.1 package.
+	
+	* packages/uni-confusables-0.1/uni-confusables-pkg.el: Add package tag.
+	
+	* packages/uni-confusables-0.1/uni-confusables.el: Add generated
+	file.
+	
+	* packages/uni-confusables-0.1/gen-confusables.el: Add converter
+	from confusables.txt to uni-confusables.el.
+	
+	* packages/uni-confusables-0.1/confusables.txt: Unicode UTS-39
+	confusables mapping database.
+
