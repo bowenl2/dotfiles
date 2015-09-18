@@ -111,6 +111,7 @@ use to determine if the package is installed/loaded."
 
 ;; web-mode
 (require 'web-mode)
+(setq web-mode-enable-current-column-highlight t)
 
 ;; uniquify
 (require 'uniquify)
@@ -139,6 +140,7 @@ use to determine if the package is installed/loaded."
 
 ;; figlet
 (require 'figlet)
+(setq figlet-default-font "bigascii9")
 
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -159,6 +161,7 @@ use to determine if the package is installed/loaded."
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(projectile-tags-command "/usr/bin/ctags -Re -f \"%s\" %s")
+ '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(web-mode-enable-auto-closing t)
  '(web-mode-enable-comment-keywords "TODO")
  '(web-mode-enable-engine-detection t)
