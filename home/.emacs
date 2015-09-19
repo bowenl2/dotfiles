@@ -70,13 +70,13 @@ use to determine if the package is installed/loaded."
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
 
-;; enter
-(add-hook 'c-mode-common-hook
-          '(lambda ()
-             (local-set-key (kbd "RET") 'newline-and-indent)))
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (local-set-key (kbd "RET") 'newline-and-indent)))
+;; ;; enter
+;; (add-hook 'c-mode-common-hook
+;;           '(lambda ()
+;;              (local-set-key (kbd "RET") 'newline-and-indent)))
+;; (add-hook 'ruby-mode-hook
+;;           '(lambda ()
+;;              (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;; Mode from filename
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
@@ -175,7 +175,7 @@ use to determine if the package is installed/loaded."
  )
 
 ;; wombat theme
-(load-theme 'wombat t)
+(load-theme 'tsdh-dark t)
 
 (defun ssh-xterm-tmux ()
   ;; Resize things less ridiculously - this is a hack for XTERM/SSH/TMUX
@@ -207,3 +207,17 @@ use to determine if the package is installed/loaded."
 
 (eval-after-load "sql"
   '(load-library "sql-indent"))
+
+
+(setq sql-mysql-login-params
+      '((user :default "liam")
+        (server :default "localhost")
+        (port :default 3306)))
+(sql-set-product-feature 'mysql :prompt-regexp
+                         "^\\(?:mysql\\|mariadb\\).*> ")
+;; (add-hook 'sql-interactive-mode-hook
+;;           (lambda ()
+;;             (toggle-truncate-lines t)
+;; ;;            (setq sql-prompt-regexp "^[^>]*>")
+;;   ;;          (setq sql-prompt-cont-regexp "^[^>]*>")
+;;             ))
