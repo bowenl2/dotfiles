@@ -207,9 +207,15 @@ use to determine if the package is installed/loaded."
 
 (setq sql-mysql-login-params
       '((user :default "liam")
+        (database :default "prims_development")
         (server :default "localhost")
         (port :default 3306)))
-(sql-set-product-feature 'mysql :prompt-regexp
-                         "^\\(?:mysql\\|mariadb\\).*> ")
+
+(defun sqli-add-hooks ()
+  "My hooks for sql-interactive-mode"
+  (message "Running MySQL hooks")
+  (sql-set-product-feature 'mysql :prompt-regexp "^\\(?:mysql\\|mariadb\\).*> "))
+
+(add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)
 
 (smart-mode-line-enable)
