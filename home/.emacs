@@ -1,6 +1,9 @@
 ;; Liam Bowen
 ;; .emacs
 
+(prefer-coding-system 'utf-8)
+(scroll-bar-mode 0)
+
 ;; after macro
 (defmacro after (mode &rest body)
   "`eval-after-load' MODE evaluate BODY.
@@ -174,15 +177,8 @@ use to determine if the package is installed/loaded."
  ;; If there is more than one, they won't work right.
  )
 
-;; wombat theme
-(load-theme 'tsdh-dark t)
-
-(defun ssh-xterm-tmux ()
-  ;; Resize things less ridiculously - this is a hack for XTERM/SSH/TMUX
-  (global-set-key (kbd "M-[ d") 'shrink-window-horizontally)
-  (global-set-key (kbd "M-[ c") 'enlarge-window-horizontally)
-  (global-set-key (kbd "M-[ a") 'shrink-window)
-  (global-set-key (kbd "M-[ b") 'enlarge-window))
+;; theme
+(load-theme 'zenburn t)
 
 (require 'auto-complete)
 (require 'go-autocomplete)
@@ -215,9 +211,5 @@ use to determine if the package is installed/loaded."
         (port :default 3306)))
 (sql-set-product-feature 'mysql :prompt-regexp
                          "^\\(?:mysql\\|mariadb\\).*> ")
-;; (add-hook 'sql-interactive-mode-hook
-;;           (lambda ()
-;;             (toggle-truncate-lines t)
-;; ;;            (setq sql-prompt-regexp "^[^>]*>")
-;;   ;;          (setq sql-prompt-cont-regexp "^[^>]*>")
-;;             ))
+
+(smart-mode-line-enable)
