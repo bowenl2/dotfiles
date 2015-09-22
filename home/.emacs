@@ -2,7 +2,6 @@
 ;; .emacs
 
 (prefer-coding-system 'utf-8)
-(scroll-bar-mode 0)
 
 ;; after macro
 (defmacro after (mode &rest body)
