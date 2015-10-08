@@ -155,15 +155,47 @@ use to determine if the package is installed/loaded."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-    ("d9639ebed5f3709f47b53e4bb8eea98a11455ab9336039cf06e9695a0233d5fb" default)))
+    ("b85fc9f122202c71b9884c5aff428eb81b99d25d619ee6fde7f3016e08515f07" "19352d62ea0395879be564fc36bc0b4780d9768a964d26dfae8aad218062858d" "419637b7a8c9cb43f273980f0c9879c0cbadace6b38efac0281e031772c84eb2" "d9639ebed5f3709f47b53e4bb8eea98a11455ab9336039cf06e9695a0233d5fb" default)))
+ '(fci-rule-color "#383838")
+ '(hl-paren-colors
+   (quote
+    ("#B9F" "#B8D" "#B7B" "#B69" "#B57" "#B45" "#B33" "#B11")))
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
+ '(nrepl-message-colors
+   (quote
+    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(projectile-tags-command "/usr/bin/ctags -Re -f \"%s\" %s")
  '(safe-local-variable-values (quote ((encoding . utf-8))))
+ '(vc-annotate-background "#2B2B2B")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#BC8383")
+     (40 . "#CC9393")
+     (60 . "#DFAF8F")
+     (80 . "#D0BF8F")
+     (100 . "#E0CF9F")
+     (120 . "#F0DFAF")
+     (140 . "#5F7F5F")
+     (160 . "#7F9F7F")
+     (180 . "#8FB28F")
+     (200 . "#9FC59F")
+     (220 . "#AFD8AF")
+     (240 . "#BFEBBF")
+     (260 . "#93E0E3")
+     (280 . "#6CA0A3")
+     (300 . "#7CB8BB")
+     (320 . "#8CD0D3")
+     (340 . "#94BFF3")
+     (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3")
  '(web-mode-enable-auto-closing t)
  '(web-mode-enable-comment-keywords "TODO")
  '(web-mode-enable-engine-detection t)
