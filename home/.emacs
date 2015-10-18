@@ -250,3 +250,11 @@ use to determine if the package is installed/loaded."
 (add-hook 'sql-interactive-mode-hook 'sqli-add-hooks)
 
 (smart-mode-line-enable)
+
+;; reactjs / jsx crap
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+        ad-do-it))
