@@ -21,3 +21,6 @@ zcat
 zcat 2015-01-01-1.json-processed.json.gz | head -n 1
 zcat 2015-01-01-11.json-processed.json.gz | head -n 1
 exit
+rails
+which rails
+exit
