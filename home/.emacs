@@ -71,15 +71,6 @@ use to determine if the package is installed/loaded."
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
-
-;; ;; enter
-;; (add-hook 'c-mode-common-hook
-;;           '(lambda ()
-;;              (local-set-key (kbd "RET") 'newline-and-indent)))
-;; (add-hook 'ruby-mode-hook
-;;           '(lambda ()
-;;              (local-set-key (kbd "RET") 'newline-and-indent)))
-
 ;; Mode from filename
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
@@ -132,6 +123,8 @@ use to determine if the package is installed/loaded."
 (require 'fic-mode)
 (add-hook 'c-mode-common-hook 'turn-on-fic-mode)
 (add-hook 'text-mode-hook 'turn-on-fic-mode)
+(add-hook 'ruby-mode-hook 'turn-on-fic-mode)
+(add-hook 'js2-mode-hook 'turn-on-fic-mode)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-^") 'mc/edit-lines)
